@@ -1,10 +1,10 @@
+#pragma execution_character_set("utf-8")
+
 #include <iostream>
 #include <vector>
 #include <cassert>
 #include <stack>
 #include <utility>
-
-#pragma execution_character_set("utf-8")
 
  //Definition for a binary tree node.
 struct TreeNode {
