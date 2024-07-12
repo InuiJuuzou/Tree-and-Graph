@@ -42,6 +42,10 @@ public:
     //итеративно
     std::vector<int> inorderTraversalIt(TreeNode* root)
     {
+        if (root == nullptr)
+        {
+            return {};
+        }
         //сам узел и то посещ€ли или нет
         std::stack<std::pair<TreeNode*,bool>> lists;
         std::vector<int> answer;
