@@ -63,9 +63,24 @@ public:
 
         while (!stack.empty())
         {
+            TreeNode* node = stack.top().first;
+            bool flag = stack.top().second;
 
+            //если поситили
+            if (flag)
+            {
+                stack.pop();
+                if(node->right!= nullptr)
+                    stack.push(std::make_pair(node->right, false));
+            }
+            if (!flag)
+            {
+                answer.push_back(node->val);
+                stack.top().second = true;
+                if (node->left != nullptr)
+                    stack.push(std::make_pair(node->left, false));
+            }
         }
-
 
         return answer;
     }
@@ -116,7 +131,28 @@ void Test()
         vector<int> result = s.preorderTraversal2(root);
         assert(result.empty());
     }
+    //--------------------------------------------------------
+    {
+        TreeNode root;
+        TreeNode left(3);
+        TreeNode right(2, &left, nullptr);
+        root.val = 1;
+        root.right = &right;
 
+        vector<int> result = { 1,2,3 };
+        vector<int> answer = s.preorderTraversalIterativ(&root);
+        assert(result == s.preorderTraversalIterativ(&root));
+    }
+    {
+        TreeNode root(1);
+        vector<int> result = { 1 };
+        assert(result == s.preorderTraversalIterativ(&root));
+    }
+    {
+        TreeNode* root = nullptr;
+        vector<int> result = s.preorderTraversalIterativ(root);
+        assert(result.empty());
+    }
     cout << "DONE";
 }
 
