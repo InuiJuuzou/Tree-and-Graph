@@ -13,3 +13,11 @@
 /calculate/calculate/Debug/*
 /calculate/*.sln
 /calculate/.vs
+
+/144_Preorder_Traversal/Debug/*
+/144_Preorder_Traversal/144_Preorder_Traversal/*.vcxproj
+/144_Preorder_Traversal/144_Preorder_Traversal/*.vcxproj.filters
+/144_Preorder_Traversal/144_Preorder_Traversal/*.vcxproj.user
+/144_Preorder_Traversal/144_Preorder_Traversal/Debug/*
+/144_Preorder_Traversal/*.sln
+/144_Preorder_Traversal/.vs
